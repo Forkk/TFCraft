@@ -241,10 +241,10 @@ public class TileEntityTerraAnvil extends NetworkTileEntity implements IInventor
 		return rules;
 	}
 	
-	public void playHitSound(float pitchMod)
+	public void playHitSound(float force)
 	{
 		worldObj.playSoundEffect(xCoord + 0.5, yCoord + 0.5, zCoord + 0.5, 
-				"random.anvil_land", 1.0F, worldObj.rand.nextFloat() * 0.1F + pitchMod);
+				TFC_Sounds.METALIMPACT, force, worldObj.rand.nextFloat() * 0.1F + 0.9F);
 	}
 
 	public void actionHeavyHammer()
@@ -263,7 +263,7 @@ public class TileEntityTerraAnvil extends NetworkTileEntity implements IInventor
 					anvilItemStacks[0] = null;
 				}
 				
-				playHitSound(1.0F);
+				playHitSound(0.5f);
 			}
 		}
 		else
@@ -288,7 +288,7 @@ public class TileEntityTerraAnvil extends NetworkTileEntity implements IInventor
 					anvilItemStacks[0] = null;
 				}
 				
-				playHitSound(1.2f);
+				playHitSound(0.3f);
 			}
 		}
 		else
@@ -313,7 +313,7 @@ public class TileEntityTerraAnvil extends NetworkTileEntity implements IInventor
 					anvilItemStacks[0] = null;
 				}
 				
-				playHitSound(0.9f);
+				playHitSound(0.7f);
 			}
 		}
 		else
@@ -337,7 +337,7 @@ public class TileEntityTerraAnvil extends NetworkTileEntity implements IInventor
 					anvilItemStacks[0] = null;
 				}
 				
-				playHitSound(0.8f);
+				playHitSound(1.2f);
 			}
 		}
 		else
@@ -361,7 +361,7 @@ public class TileEntityTerraAnvil extends NetworkTileEntity implements IInventor
 					anvilItemStacks[0] = null;
 				}
 				
-				playHitSound(1.2f);
+				playHitSound(0.2f);
 			}
 		}
 		else
@@ -385,7 +385,7 @@ public class TileEntityTerraAnvil extends NetworkTileEntity implements IInventor
 					anvilItemStacks[0] = null;
 				}
 				
-				playHitSound(1.1f);
+				playHitSound(0.4f);
 			}
 		}
 		else
@@ -409,7 +409,7 @@ public class TileEntityTerraAnvil extends NetworkTileEntity implements IInventor
 					anvilItemStacks[0] = null;
 				}
 				
-				playHitSound(1.0f);
+				playHitSound(0.6f);
 			}
 		}
 		else
@@ -433,7 +433,7 @@ public class TileEntityTerraAnvil extends NetworkTileEntity implements IInventor
 					anvilItemStacks[0] = null;
 				}
 				
-				playHitSound(0.9f);
+				playHitSound(1.0f);
 			}
 		}
 		else
