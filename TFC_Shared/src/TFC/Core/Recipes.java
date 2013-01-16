@@ -400,6 +400,20 @@ public class Recipes
 		
 		ModLoader.addShapelessRecipe(new ItemStack(TFCItems.Blueprint, 1), new Object[] { new ItemStack(TFCItems.Ink,3,-1), new ItemStack(Item.paper, 1)});
 		
+		Block[] bricks = new Block[] { TFCBlocks.StoneIgExSmooth, TFCBlocks.StoneIgInSmooth, TFCBlocks.StoneMMSmooth, TFCBlocks.StoneSedSmooth };
+		for (int i = 0; i < bricks.length; i++)
+		{
+			ModLoader.addRecipe(new ItemStack(Block.dispenser, 1), 
+					new Object[] { "SSS", "SBS", "SRS", Character.valueOf('S'), new ItemStack(bricks[i]), Character.valueOf('B'), new ItemStack(Item.bow), Character.valueOf('R'), new ItemStack(Item.redstone)});
+			ModLoader.addRecipe(new ItemStack(Item.redstoneRepeater, 1), 
+					new Object[] { "TRT", "SSS", Character.valueOf('S'), new ItemStack(bricks[i]), Character.valueOf('T'), new ItemStack(Block.torchRedstoneActive), Character.valueOf('R'), new ItemStack(Item.redstone)});
+			ModLoader.addRecipe(new ItemStack(Block.pistonBase, 1),
+					new Object[] { "WWW", "STS", "SRS", Character.valueOf('S'), new ItemStack(bricks[i]), Character.valueOf('W'), new ItemStack(Block.planks), Character.valueOf('T'), new ItemStack(TFCItems.SteelIngot), Character.valueOf('R'), new ItemStack(Item.redstone)});
+		}
+		
+		ModLoader.addRecipe(new ItemStack(Item.doorSteel), 
+				new Object[] { "PW", "WW", "PW", Character.valueOf('P'), new ItemStack(TFCItems.WroughtIronSheet), Character.valueOf('W'), new ItemStack(Block.planks) });
+		
 		RegisterToolRecipes();
 		registerFoodRecipes();
 		VanillaRecipes();
