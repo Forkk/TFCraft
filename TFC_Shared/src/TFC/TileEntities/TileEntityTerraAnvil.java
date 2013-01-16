@@ -240,6 +240,12 @@ public class TileEntityTerraAnvil extends NetworkTileEntity implements IInventor
 		}
 		return rules;
 	}
+	
+	public void playHitSound(float pitchMod)
+	{
+		worldObj.playSoundEffect(xCoord + 0.5, yCoord + 0.5, zCoord + 0.5, 
+				"random.anvil_land", 1.0F, worldObj.rand.nextFloat() * 0.1F + pitchMod);
+	}
 
 	public void actionHeavyHammer()
 	{
@@ -256,6 +262,8 @@ public class TileEntityTerraAnvil extends NetworkTileEntity implements IInventor
 				if(anvilItemStacks[0].getItemDamage() == anvilItemStacks[0].getMaxDamage()) {
 					anvilItemStacks[0] = null;
 				}
+				
+				playHitSound(1.0F);
 			}
 		}
 		else
@@ -279,6 +287,8 @@ public class TileEntityTerraAnvil extends NetworkTileEntity implements IInventor
 				if(anvilItemStacks[0].getItemDamage() == anvilItemStacks[0].getMaxDamage()) {
 					anvilItemStacks[0] = null;
 				}
+				
+				playHitSound(1.2f);
 			}
 		}
 		else
@@ -302,6 +312,8 @@ public class TileEntityTerraAnvil extends NetworkTileEntity implements IInventor
 				if(anvilItemStacks[0].getItemDamage() == anvilItemStacks[0].getMaxDamage()) {
 					anvilItemStacks[0] = null;
 				}
+				
+				playHitSound(0.9f);
 			}
 		}
 		else
@@ -324,6 +336,8 @@ public class TileEntityTerraAnvil extends NetworkTileEntity implements IInventor
 				if(anvilItemStacks[0].getItemDamage() == anvilItemStacks[0].getMaxDamage()) {
 					anvilItemStacks[0] = null;
 				}
+				
+				playHitSound(0.8f);
 			}
 		}
 		else
@@ -346,6 +360,8 @@ public class TileEntityTerraAnvil extends NetworkTileEntity implements IInventor
 				if(anvilItemStacks[0].getItemDamage() == anvilItemStacks[0].getMaxDamage()) {
 					anvilItemStacks[0] = null;
 				}
+				
+				playHitSound(1.2f);
 			}
 		}
 		else
@@ -368,6 +384,8 @@ public class TileEntityTerraAnvil extends NetworkTileEntity implements IInventor
 				if(anvilItemStacks[0].getItemDamage() == anvilItemStacks[0].getMaxDamage()) {
 					anvilItemStacks[0] = null;
 				}
+				
+				playHitSound(1.1f);
 			}
 		}
 		else
@@ -390,6 +408,8 @@ public class TileEntityTerraAnvil extends NetworkTileEntity implements IInventor
 				if(anvilItemStacks[0].getItemDamage() == anvilItemStacks[0].getMaxDamage()) {
 					anvilItemStacks[0] = null;
 				}
+				
+				playHitSound(1.0f);
 			}
 		}
 		else
@@ -412,6 +432,8 @@ public class TileEntityTerraAnvil extends NetworkTileEntity implements IInventor
 				if(anvilItemStacks[0].getItemDamage() == anvilItemStacks[0].getMaxDamage()) {
 					anvilItemStacks[0] = null;
 				}
+				
+				playHitSound(0.9f);
 			}
 		}
 		else
@@ -464,6 +486,9 @@ public class TileEntityTerraAnvil extends NetworkTileEntity implements IInventor
 					anvilItemStacks[2] = null;
 					anvilItemStacks[3] = null;
 					anvilItemStacks[6] = null;
+					
+					worldObj.playSoundEffect(xCoord + 0.5, yCoord + 0.5, zCoord + 0.5, 
+							"random.anvil_use", 1.0F, worldObj.rand.nextFloat() * 0.1F + 0.9F);
 				}
 
 			}
