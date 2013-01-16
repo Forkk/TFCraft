@@ -86,7 +86,7 @@ public class ItemCoal extends ItemTerra {
 	@Override
 	public boolean onItemUse(ItemStack is, EntityPlayer player, World world, int i, int j, int k, int side, float hitX, float hitY, float hitZ)
 	{
-		if(is.getItemDamage() == 1 && !world.isRemote)
+		if(is.getItemDamage() == 1 && !world.isRemote && player.isSneaking())
 		{
 			if(world.getBlockId(i, j, k) == TFCBlocks.Charcoal.blockID)
 			{
